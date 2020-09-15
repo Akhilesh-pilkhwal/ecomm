@@ -47,7 +47,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /(\.css)$/,
+        test: /(\.(css))$/,
         use: [
           'style-loader',
           {
@@ -76,7 +76,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components|webpack.config.js)/,
         use: {
           loader: 'babel-loader'
@@ -95,6 +95,9 @@ module.exports = {
       { test: /\.(woff|woff2)$/, use: 'url?prefix=font/&limit=5000-loader' },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, use: 'url?limit=10000&mimetype=application/octet-stream-loader' },
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, use: 'url?limit=10000&mimetype=image/svg+xml-loader' }
-    ]
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   }
 };
